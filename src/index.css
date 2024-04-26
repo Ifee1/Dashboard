@@ -1,13 +1,454 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	overflow-x: hidden;
+	overflow-y: visible;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+	font-size: 62.5%;
 }
+
+body {
+	font-family: "Roboto Mono", sans-serif;
+	color: #252525;
+}
+
+.dashboard {
+	background-color: #d2deee;
+	padding: 2rem 5rem;
+	/* height: 100vh; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.whiteDiv {
+	background-color: #f0f3fa;
+	padding: 4rem 11rem;
+	padding-right: 4rem;
+	width: fit-content;
+	height: fit-content;
+	/* display: flex; */
+	position: relative;
+	justify-content: center;
+	align-items: center;
+	border-radius: 1rem;
+	border-top-left-radius: 2rem;
+	border-bottom-left-radius: 2rem;
+}
+
+.overallChart {
+	display: flex;
+	column-gap: 2rem;
+	padding: 2rem;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.charts {
+	/* width: 68%; */
+	padding: 2rem 0.3rem;
+	/* border: 1px solid blue; */
+	display: flex;
+	flex-direction: column;
+	row-gap: 3rem;
+}
+
+.smallChartsContainer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.smallCharts {
+	display: flex;
+	gap: 2rem;
+	align-items: center;
+	width: 28%;
+	/* justify-content: center; */
+	background-color: #f5f5f5;
+	padding: 2rem;
+	border-radius: 2rem;
+	box-shadow: 0px 6px 4px gainsboro;
+}
+
+.toggleIcon {
+	height: 2rem;
+	width: 2rem;
+	/* stroke: #88b0d3; */
+}
+
+.slideDiv {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.slide1,
+.slide2 {
+	height: 6rem;
+	width: 6rem;
+	background-color: #dff3e4;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* border-radius: 2rem; */
+}
+
+.slide1.clicked {
+	background-color: #a598eb;
+	border-radius: 1rem;
+}
+
+.slide2.clicked {
+	background-color: blue;
+}
+
+.smallCharts:last-child {
+	background-color: #ff0000;
+}
+
+.chartVisitors > h4 {
+	color: #9e9494;
+	text-transform: uppercase;
+}
+
+.chartVisitors > h3 {
+	color: #0b0a0a;
+	font-size: 2rem;
+}
+
+.bigChart {
+	display: flex;
+	justify-content: center;
+}
+
+.bigChartImage {
+	width: 86rem;
+	height: 17rem;
+}
+
+.smallTabsContainer {
+	display: flex;
+	gap: 4rem;
+	justify-content: space-between;
+	/* justify-content: space-between; */
+}
+
+.smallTabImage {
+	width: 42rem;
+	height: 14rem;
+}
+
+.smallImage {
+	display: flex;
+	row-gap: 3rem;
+	flex-direction: column;
+	justify-content: center;
+	background-color: #ebebeb;
+	padding: 2rem;
+	width: 50%;
+	border-radius: 3rem;
+}
+
+.imageText {
+	display: flex;
+	justify-content: space-between;
+}
+
+.imageText > p:nth-child(2) {
+	background-color: #ff0000;
+	padding: 1rem;
+	border-radius: 1rem;
+	color: #ffff;
+}
+
+.imageText > p:nth-child(1) {
+	color: #000;
+	font-weight: bold;
+	font-size: 2rem;
+}
+
+.smallTabText {
+	display: flex;
+	row-gap: 3rem;
+	flex-direction: column;
+	background-color: #ebebeb;
+	padding: 2rem;
+	width: 50%;
+	border-radius: 3rem;
+}
+
+.tabImage {
+	width: 4rem;
+	border-radius: 50%;
+}
+
+.nameAndPix {
+	display: flex;
+	gap: 2rem;
+	align-items: center;
+}
+
+.name {
+	display: flex;
+	flex-direction: column;
+}
+
+.videoLogs {
+	display: flex;
+	justify-content: space-between;
+}
+
+.eachTab {
+	display: flex;
+	gap: 0.5rem;
+	align-items: center;
+}
+
+.connectButton {
+	display: flex;
+	align-items: center;
+	border: none;
+	border-radius: 2rem;
+	background-color: #1800b8;
+	color: #dcdee5;
+	padding: 1rem 1.5rem;
+	font-weight: bold;
+	justify-content: center;
+}
+
+.connectButtonDiv {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.sideChart {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	row-gap: 2rem;
+	/* align-items: center; */
+	background-color: #ebebeb;
+	padding: 2rem 4rem;
+	/* width: 28%; */
+}
+
+.outerCircle {
+	height: 12rem;
+	width: 12rem;
+	background-color: #f4f5f5;
+	border-radius: 50%;
+	border-right: 2px solid #1800b8;
+	border-bottom: 3px solid #1800b8;
+	/* border: 1px #1800b8; */
+	/* box-shadow: 0px 6px 4px gainsboro; */
+}
+
+.tinyCircle {
+	height: 1rem;
+	width: 1rem;
+	background-color: #1800b8;
+	border-radius: 50%;
+	transform: translate(-0.5rem, 8rem);
+}
+
+.pen {
+	position: absolute;
+	right: 2rem;
+}
+
+.amountDiv {
+	position: absolute;
+	height: 5rem;
+	font-size: 1.2rem;
+	width: 9rem;
+	top: 9rem;
+	right: 0rem;
+	bottom: 0rem;
+	/* transform: translate(15rem, 6rem); */
+	padding: 2rem;
+	background-color: #301fc1;
+	color: #ebebeb;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 1rem;
+}
+
+.innerCircle {
+	height: 7rem;
+	width: 7rem;
+	background-color: #f4f5f5;
+	border-radius: 50%;
+	transform: translate(2.5rem, 1.5rem);
+	color: #301fc1;
+	font-size: 2rem;
+	font-weight: bold;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0px 1px 6px gainsboro;
+}
+
+.myCard,
+.transactionDiv {
+	display: flex;
+	justify-content: space-between;
+	/* align-items: center; */
+	column-gap: 4rem;
+	font-size: 1.5rem;
+}
+
+.creditCard {
+	display: flex;
+	justify-content: center;
+}
+
+.atmCard {
+	height: 14rem;
+	width: 25rem;
+}
+
+.redPlus {
+	height: 2rem;
+	width: 2rem;
+}
+
+.transactionIcon {
+	height: 4rem;
+	width: 4rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 2rem;
+	background-color: #f4f5f5;
+}
+
+.transactionContainer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 4rem;
+}
+
+.transactionItemDiv {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+	font-weight: bolder;
+	font-size: 1.5rem;
+}
+
+.transactionItem > p:nth-child(2) {
+	color: #928e8b;
+}
+
+@media (max-width: 1250px) {
+	.overallChart {
+		flex-direction: column;
+	}
+
+	.sideChart {
+		width: 100%;
+	}
+
+	.smallImage {
+		width: 100%;
+	}
+
+	.smallTabText {
+		width: 100%;
+	}
+}
+
+@media (max-width: 1100px) {
+	.smallTabsContainer {
+		align-items: center;
+		flex-direction: column;
+	}
+
+	.smallChartsContainer {
+		justify-content: space-around;
+		margin-bottom: 3rem;
+	}
+
+	.smallCharts {
+		width: fit-content;
+	}
+
+	.bigChartImage {
+		width: min-content;
+		height: min-content;
+	}
+
+	.videoLogs,
+	.connectButtonDiv {
+		justify-content: space-around;
+	}
+
+	.nameAndPix {
+		justify-content: center;
+	}
+
+	.nameAndPix > span {
+		text-align: center;
+	}
+
+	.imageText {
+		justify-content: space-around;
+	}
+}
+
+@media (max-width: 800px) {
+	.smallChartsContainer {
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+	.smallCharts {
+		width: 79%;
+		justify-content: space-between;
+		padding: 2rem 4rem;
+	}
+
+	.bigChartImage {
+		width: 76%;
+	}
+
+	.smallImage,
+	.smallTabText {
+		width: 78%;
+	}
+
+	.smallTabImage {
+		width: 30rem;
+	}
+}
+@media (max-width: 500px) {
+	.smallChartsContainer {
+		margin: 3rem 0rem;
+	}
+	.smallCharts {
+		width: 65%;
+		justify-content: space-between;
+		padding: 2rem 4rem;
+	}
+
+	.bigChartImage {
+		width: 65%;
+	}
+
+	.smallImage,
+	.smallTabText {
+		width: 65%;
+	}
+
+	.smallTabImage {
+		width: 30rem;
+	}
+}
+
